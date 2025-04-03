@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">AdApplication</string>
+    <string name="tab1_news">Способы заработка</string>
+    <string name="tab2_news">Другие способы заработка</string>
+</resources>
