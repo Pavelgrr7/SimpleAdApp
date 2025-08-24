@@ -5,14 +5,19 @@ import com.settery.adappapr.domain.GetContentUseCase
 import com.settery.adappapr.domain.MainScreenState
 import org.orbitmvi.orbit.ContainerHost
 import org.orbitmvi.orbit.viewmodel.container
+import kotlin.Int
 
 class MainViewModel(
-    private val getContentUseCase: GetContentUseCase // use-case через DI
+    private val getContentUseCase: GetContentUseCase
 ) : ViewModel(), ContainerHost<MainScreenState, MainScreenSideEffect> {
 
     //    MainScreenState - это наш класс-состояние.
     override val container = container<MainScreenState, MainScreenSideEffect>(
-        initialState = MainScreenState(isLoading = true),)
+        initialState = MainScreenState(
+            isLoading = true,
+            items = emptyList(),
+            currentTab = "0"
+        ),)
 
     fun loadContent(tab: String) = intent {
         reduce {
@@ -32,6 +37,9 @@ class MainViewModel(
         }
     }
 
+    fun onTabSelected(position: Int) {
+
+    }
 //    fun onRetryClicked() {
 //        loadContent(container.stateFlow.value.currentTab)
 //    }

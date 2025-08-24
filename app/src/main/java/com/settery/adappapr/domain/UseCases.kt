@@ -2,9 +2,9 @@ package com.settery.adappapr.domain
 
 class GetContentUseCase(val repository: ContentRepository) {
     fun execute(tab: String): List<ListItem> {
-        when(tab) {
-            "tab1" -> return repository.getTab1Content()
-            "tab2" -> return repository.getTab2Content()
+        return when(tab) {
+            "tab1" -> repository.getTab1Content()
+            "tab2" -> repository.getTab2Content()
             else -> throw IllegalArgumentException("Unknown tab: $tab")
         }
     }

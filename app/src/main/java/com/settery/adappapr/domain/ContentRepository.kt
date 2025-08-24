@@ -2,16 +2,9 @@ package com.settery.adappapr.domain
 
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
+import com.settery.adappapr.data.ApiService
 
-class ContentRepository(private val ds: DataStore<Preferences>) {
-
-    fun getTab1Content(): List<ListItem> {
-        return listOf()
-    }
-
-    fun getTab2Content(): List<ListItem> {
-        return listOf()
-    }
-
-
+interface ContentRepository {
+    fun getTab1Content(): List<ListItem>
+    fun getTab2Content(): List<ListItem>
 }
